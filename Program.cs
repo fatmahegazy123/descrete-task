@@ -1,49 +1,46 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics.CodeAnalysis;
 using System.Linq;
-using System.Runtime.ExceptionServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace prime_number
+namespace perfect_number
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("please enter first number");
+            Console.WriteLine("please enter the first number ");
             int start = int.Parse(Console.ReadLine());
-            Console.WriteLine("please enter second number");
+            Console.WriteLine("please enter the second number ");
             int end = int.Parse(Console.ReadLine());
-            bool prime = true;
-            Console.WriteLine("the prime number is :");
-
+            int sum;
             for (int i = start; i <= end; i++)
             {
-                for (int x = 2; x < end ; x++)
+                sum = 0;
+                for (int x = 1; x <= i / 2; x++)
                 {
-                    if (i != x && i % x == 0)
+
+                    if (i % x == 0)
                     {
-                        prime = false;
-                        break;
+                        sum += x;
                     }
-                  if (i==1)
-                        prime = false;
-                   
+
+
+
+
+
+
+
+
                 }
-                if (prime)
-              Console.WriteLine(i);
-                
-                prime = true;
+                if (sum == i)
+                {
+                    Console.WriteLine("the prime number is :" + sum);
 
 
+                }
 
-
-
-
-
-               
             }
         }
     }
